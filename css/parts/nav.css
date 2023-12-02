@@ -1,0 +1,22 @@
+.navbar{
+    background-color: #0878efe5;
+}
+
+a.navbar-brand{
+    color: white;
+}
+
+a.nav-link{
+    color: white;
+}
+
+.navbar .nav-link.active{
+    color: white;
+    font-weight: bolder;
+}
+
+a.nav-link:hover{
+    color: white;
+    font-weight: bolder;
+    transition: 0.08s;
+}

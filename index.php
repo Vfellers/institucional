@@ -1,5 +1,8 @@
 <?php
-const URL_SITE = "http://localhost/institucional/"
+const URL_SITE = "http://localhost/institucional/";
+require_once "mobile_device_detect.php";                //Detectar se esta utilizando pelo celular 
+
+$isMobile = mobile_device_detect();                     //Resultado da funcao
 ?>
 
 
@@ -21,14 +24,11 @@ const URL_SITE = "http://localhost/institucional/"
             require_once "components/nav.php"
         ?>
 
-        <div class="container">
-            <div class="row">
+        <div class="container<?php echo ($page == "home") ? "-fluid p-0" : "" ?>">          <!-- se a page estiver na home, vai mudar onome da classe de container para container-fluid que expande a imagem-->
                 <?php
                 require_once "views/{$page}.php"; // Vai puxar do nav a variavel $page que puxa qual pagina estou
                 ?>
-            </div>
         </div>
-
 
         <?php
             require_once "components/footer.php"
