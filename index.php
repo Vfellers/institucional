@@ -1,6 +1,7 @@
 <?php
 const URL_SITE = "http://localhost/institucional/";
 require_once "mobile_device_detect.php";                //Detectar se esta utilizando pelo celular 
+require_once "conectarBanco.php";                       //conectar o arquivo que puxa o banco
 
 $isMobile = mobile_device_detect();                     //Resultado da funcao
 ?>

@@ -1,22 +1,34 @@
-<!-- Banner Pagina Inicial Home -->
-
 <?php
+// Banner Pagina Inicial Home
 
-$dados = [
-    [
-        "title" => "Curso de programação PHP", 
-        "description" => "O melhor curso do Brasil",
-        "img" => "banner1.jpg",
-        "imgMobile" => "banner1m.jpg"
-    ],
-    [
-        "title" => "Curso de JAVA", 
-        "description" => "O melhor do Java",
-        "img" => "banner2.jpg",
-        "imgMobile" => "banner2m.jpg"
-    ]
+//Conexao com o banco de dados
+$sql = "SELECT * FROM banners";                                         //Tabela que criei no workbench
+$qry = mysqli_query($con, $sql) or die("ERRO NA CONSULTA");             //A conexao, verificar se esta conectado pela variavel $con em conectarBanco e comando, acima 
 
-]
+
+$dados = [];
+$i=0;
+while ($data = mysqli_fetch_assoc($qry)){
+    $dados[$i] = $data;
+    $i++;
+}
+
+
+// $dados = [
+//     [
+//         "title" => "Curso de programação PHP", 
+//         "description" => "O melhor curso do Brasil",
+//         "img" => "banner1.jpg",
+//         "imgMobile" => "banner1m.jpg"
+//     ],
+//     [
+//         "title" => "Curso de JAVA", 
+//         "description" => "O melhor do Java",
+//         "img" => "banner2.jpg",
+//         "imgMobile" => "banner2m.jpg"
+//     ]
+
+// ]
 ?>
 
 <div id="carouselExampleCaptions" class="carousel slide">
@@ -31,8 +43,8 @@ $dados = [
     <div class="carousel-item <?php echo $active ?>">
       <img src="<?php echo URL_SITE."img/".$img ?>" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <!-- <h5 class="bg-dark"> <?php echo $b["title"]  ?> </h5>
-        <p class="bg-dark">  <?php echo $b["description"] ?> </p> -->
+        <h5 class="bg-dark"> <?php echo $b["title"]  ?> </h5>
+        <p class="bg-dark">  <?php echo $b["description"] ?> </p>
         <a href="#" class="btn btn-danger">ASSINE JÁ</a>
       </div>
     </div>
