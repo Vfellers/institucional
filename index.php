@@ -19,23 +19,28 @@ $isMobile = mobile_device_detect();                     //Resultado da funcao
 </head>
 
 <body>
-    <main>
         <?php
             require_once "components/nav.php"
         ?>
 
-        <div class="container<?php echo ($page == "home") ? "-fluid p-0" : "" ?>">          <!-- se a page estiver na home, vai mudar onome da classe de container para container-fluid que expande a imagem-->
+    <main>
+        <div class="container<?php echo ($page == "home") ? "-fluid p-0" : "" ?>">          <!-- se a page estiver na home, vai mudar o nome da classe de container para container-fluid que expande a imagem-->
                 <?php
                 require_once "views/{$page}.php"; // Vai puxar do nav a variavel $page que puxa qual pagina estou
                 ?>
         </div>
 
+    </main>
+
         <?php
             require_once "components/footer.php"
         ?>
 
-    </main>
-
+    <script>
+        const URL = "<?php echo URL_SITE?>"   //NUMERO 1
+    </script>
     <script src="<?php echo URL_SITE?>js/bootstrap.bundle.min.js"></script> <!-- JS Bootstrap -->
+    <script src="<?php echo URL_SITE?>js/jquery-3.7.1.min.js"></script>
+    <script src="<?php echo URL_SITE?>js/app.js"></script>
 </body>
 </html>

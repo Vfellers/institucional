@@ -89,7 +89,7 @@ $stacks = [
 ?>
 
 
-<div class="container">
+<div class="container p-4">
     <div class="row">
 
         <?php
