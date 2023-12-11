@@ -43,8 +43,8 @@ while ($data = mysqli_fetch_assoc($qry)){
     <div class="carousel-item <?php echo $active ?>">
       <img src="<?php echo URL_SITE."img/".$img ?>" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5 class="bg-dark"> <?php echo $b["title"]  ?> </h5>
-        <p class="bg-dark">  <?php echo $b["description"] ?> </p>
+        <h5 class=""> <?php echo $b["title"]  ?> </h5>
+        <p class="">  <?php echo $b["description"] ?> </p>
         <a href="#" class="btn btn-danger">ASSINE JÁ</a>
       </div>
     </div>
